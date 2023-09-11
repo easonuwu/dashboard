@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        body {
+            font-family: 'Poppins';
+            background-color: white;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            z-index: 2;
+        }
+
+        .content-load {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: white;
+            border-radius: 15px;
+            z-index: 10;
+        }
+
+
+        .content-login {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: white;
+            border-radius: 15px;
+            z-index: 1;
+        }
+
+        #state {
+            font-size: 125%;
+        }
+        
+        .loader {
+            margin-top: 13px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #353535;
+            border-radius: 50%;
+            width: 33px;
+            height: 33px;
+            animation: spin 1.5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .login {
+            position: absolute;
+            /* visibility: hidden; */
+            z-index: 3;
+        }
+
+        /* Form */
+        .inputbox {
+            font-family: 'Poppins';
+            font-size: 90%;
+            width: 80%;
+            height: 30px;
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        textarea:focus, input:focus{
+            outline: none;
+        }
+
+        .showpassword {
+            float:right;
+            color:rgb(0, 121, 168);
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="content-load" id="load">
+                <h1>:Nutsack</h1>
+                <span id="state">The Nutsack dashboard is loading..</span>
+                <div class="loader"></div>
+            </div>
+            <div class="content-login">
+                <h1>:Nutsack</h1>
+                <span id="state">Login to the Nutsack Dashboard.</span><br><br>
+                <span>Username</span><br>
+                <input class="username inputbox" placeholder="Username"><br>
+                <div style="width: 80%;"><span>Password</span></div>
+                <input class="password inputbox" placeholder="Password" type="password">
+            </div>
+        </div>
+    </body>
+    <script>
+        setInterval(function() {
+            document.getElementById("load").style.visibility = "hidden";
+        }, 500);
+    </script>
+</html>
